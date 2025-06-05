@@ -1,0 +1,36 @@
+vim.o.number = true
+vim.cmd('highlight LineNr guifg=#ff0000 guibg=#000000 gui=bold')
+
+-- Set a very obvious colorscheme (if installed)
+vim.cmd('colorscheme desert') -- or use any colorscheme you know is present
+
+-- Add a message to appear on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.notify("If you see this, lazy.nvim and your config are loading!", vim.log.levels.WARN)
+  end
+})
+
+
+-- bootstrap lazy.nvim if not installed
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  { "nvim-tree/nvim-tree.lua" },
+  -- add other plugins here
+})
+
+-- Now you can safely require plugins
+require("nvim-tree").setup({})
+
