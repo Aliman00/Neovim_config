@@ -16,4 +16,5 @@ require("lazy").setup({
   require("plugins.nvim-tree"),
   require("plugins.copilot"),
   require("plugins.copilotchat"),
+  require("plugins.nerdcommenter"),
 })
