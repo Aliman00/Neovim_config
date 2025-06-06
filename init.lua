@@ -1,8 +1,8 @@
 
---require("config.options")
---require("config.autocmds")
---require("config.plugins")
---require("config.nvimtree")
+-- require("config.options")
+-- require("config.autocmds")
+-- require("config.plugins")
+-- require("config.nvimtree")
 
 -- init.lua
 -- load your core config
