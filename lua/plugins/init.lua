@@ -17,4 +17,5 @@ require("lazy").setup({
   require("plugins.copilot"),
   require("plugins.copilotchat"),
   require("plugins.nerdcommenter"),
+  require("plugins.telescope"),
 })
